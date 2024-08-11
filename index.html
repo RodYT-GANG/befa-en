@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RodYT-GANG BEFA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            perspective: 1000px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            z-index: 1;
+            position: relative;
+        }
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .company-name {
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+        .button-group {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .download-button {
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-bottom: 10px;
+        }
+        .download-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+        .language-toggle {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .language-toggle:hover {
+            color: #ccc;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 30px;
+            background: rgba(31, 31, 31, 0.8);
+            border-radius: 8px;
+            max-width: 1200px;
+            margin: 20px auto;
+            opacity: 0;
+            animation: fadeIn 1s 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .app-info {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+        }
+        .app-info .logo {
+            display: block;
+            max-width: 150px;
+            margin: 0 auto 20px;
+            border-radius: 10%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+        .app-info h1 {
+            color: #fff;
+            font-size: 28px;
+            margin-top: 0;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        .app-info p {
+            color: #ddd;
+            line-height: 1.6;
+        }
+        .phone-display {
+            flex: 1;
+            max-width: 45%;
+            text-align: center;
+        }
+        .phone-frame {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 30px;
+            overflow: hidden;
+            padding: 20px;
+            transform: perspective(1500px) rotateX(10deg) rotateY(10deg);
+        }
+        .phone-frame::before {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .phone-frame .phone-screen {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .phone-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .app-info, .phone-display {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body onload="document.body.classList.add('loaded')">
+    <header>
+        <div class="header-content">
+            <div class="company-name">RodYT</div>
+            <div class="button-group">
+                <a href="" class="download-button">DOWNLOAD</a>
+                <a href="../ja/index.html" class="language-toggle">日本語</a>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="app-info">
+            <img src="icon.png" alt="App Logo" class="logo">
+            <h1>-- BEFA --</h1>
+            <p>
+                <strong>1. Supports user health management</strong><br>
+                Goal Setting and Tracking: The goal calorie setting function allows users to manage their health goals more easily. Real-time progress tracking promotes self-management.
+                <br><br>
+                <strong>2. Provides detailed nutritional information</strong><br>
+                Nutrient Recording and Analysis: Records protein, fat, and carbohydrate intake and recommends balanced meals. This helps users maintain a healthy diet.
+                <br><br>
+                <strong>3. Visually clear data display</strong><br>
+                Pie Charts: Visual representation of nutrient intake with pie charts makes it easy to understand intake balance and identify areas for improvement.
+                <br><br>
+                <strong>4. Calendar feature for data management</strong><br>
+                Daily Data Tracking: Use the calendar feature to manage daily calorie and nutrient intake. Allows users to compare past data and track changes in diet.
+                <br><br>
+                <strong>5. Easy data entry and usability</strong><br>
+                User-friendly Interface: Simple text fields for easy calorie and nutrient input, and intuitive interface makes it accessible for beginners.
+                <br><br>
+                <strong>6. Free to use</strong><br>
+                Cost Performance: Basic features are free, allowing users to try the app without worrying about costs and reaching a wide user base.
+                <br><br>
+                <strong>7. Personalization and feedback features</strong><br>
+                Feedback on Nutrient Deficiency: Provides warnings and specific improvement points when nutrient balance is off, offering valuable insights for users.
+                <br><br>
+                <strong>8. Innovative ad display</strong><br>
+                Ad Display Timing: Creative ad timing and format to monetize without compromising user experience.
+                <br><br>
+                <strong>9. Data backup and reset functions</strong><br>
+                Flexible Data Management: Offers data saving and resetting functions, allowing users to manage their data with flexibility.
+            </p>
+        </div>
+        <div class="phone-display">
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <img src="img.jpg" alt="App Screenshot">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
